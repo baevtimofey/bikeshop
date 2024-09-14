@@ -1,6 +1,7 @@
 from src.interfaces import user
 from src.entities import users
 
+
 class UserUseCases:
     def __init__(self, repo: user.UserRepository) -> None:
         self.repo = repo
@@ -13,4 +14,5 @@ class UserUseCases:
 
     async def get_all_users(self) -> typing.List[users.User]:
         return await self.repo.get_all_users()
+
     async def delete_user(self, id: int) -> None: ...
